@@ -24,8 +24,14 @@ class LinkedList(object):
         return current.value
     
     def insert(self, idx, value):
-        pass 
-        # 코드 짜보기
+        new_node = Node(value)
+
+        current = self.head
+        for _ in range(idx-1):
+            current = current.next
+        new_node.next = current.next
+        current.next = new_node
+
 
 
 
@@ -34,4 +40,4 @@ ll.append(1)
 ll.append(2)
 ll.append(3)
 ll.append(4)
-ll.insert(idx = 2, value = 9 )
+ll.insert(idx = 2, value = 9)
