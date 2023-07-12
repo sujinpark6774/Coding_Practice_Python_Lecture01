@@ -5,11 +5,9 @@ def twoSum(nums, target):
 
     for v in nums:
         needed_number = target - v
-        if needed_number in memo:
+        if needed_number in memo and v != needed_number:        # input으로 받은 숫자들 2번 사용하지 않는 조건을 뒤에 붙여줌
             return True
     return False
 
 
-nums = [2,7,11,15]
-target = 9
-twoSum(nums, target)
+twoSum([4,1,9,7,8,2], 14)
